@@ -1,0 +1,865 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+body{
+    overflow-y: hidden;
+}
+
+/* main container */
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    background-color: #0C1126;
+    height: 100vh;
+    width: 100vw;
+    /* padding-left: 1rem;
+    padding-right: 1rem; */
+    scrollbar-width: none;
+}
+
+
+
+/* header */
+
+.nav{
+    display: flex;
+    align-items: center;
+    height: 10vh;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    justify-content: space-between;
+    background-color: #0C1126;
+    /* border: 2px solid red; */
+}
+
+/* logo section */
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 20rem;
+}
+
+.logo img{
+    height: 4rem;
+    width: 4rem;
+}
+
+.fav{
+    font-size: 1.2rem;
+    color: white;
+}
+
+/* search section */
+
+.search-container{
+    display: flex;
+    align-items: center;
+    width: 40rem;
+    justify-content: flex-end;
+}
+
+.search-box{
+    display: flex;
+    align-items: center;
+    background-color: #12183f;
+    height: 2.5rem;
+    width: 30rem;
+    padding: 2%;
+    border-radius: 1rem;
+    margin-right: 3rem;
+}
+
+/* search icon for small screens */
+
+#search-icon{
+    display: none;
+}
+
+
+/* ------------------- */
+
+
+.search-box input{
+    flex: 1;
+    height: inherit;
+    background-color: #12183f;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    margin-left: 20px;
+    color: white;
+}
+
+::placeholder { 
+    color: white;
+    opacity: 0.5;
+  }
+
+.search-box i, .search-container i{
+    color: white;
+    font-size: 1.2rem;
+}
+
+.bell{
+    margin-right: 3rem;
+}
+
+/* red dot on bell icon */
+
+.bell::after{
+    content: "";
+    position: absolute;
+    height: 7px;
+    width: 7px;
+    margin-left: -6px;
+    margin-top: 2px;
+    background-color: red;
+    border-radius: 100%;
+}
+
+.profile-img img{
+    height: 60px;
+    width: 60px;
+    border-radius: 100%;
+}
+
+/* main left section */
+
+.aside-left{
+    padding-top: 3rem;
+    width: 60%;
+    /* border: 2px solid red; */
+    height: 90vh;
+    margin-left: 2rem ;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    scrollbar-width: none;
+    overflow-y: auto;
+}
+
+
+/* posters section */
+
+.top-posters{
+    margin-bottom: 3rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    flex-wrap: wrap;
+    flex-shrink: initial;
+    /* border: 2px solid red; */
+   
+}
+
+.top-posters img{
+    width: 20rem;
+    /* margin: 10px; */
+    transition: all 0.5s ease;
+    margin: 1rem;
+}
+
+.top-posters img:hover{
+    padding: 2rem;
+}
+
+/* utility class for section headings */
+
+.section-headings{
+   font-size: 1.5rem;
+   color: white;
+}
+
+/* latest release section */
+
+.cards-container{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    height: auto;
+    margin-top: 1rem;
+}
+
+.card{
+    display: flex;
+    width: 48%;
+    justify-content: space-between;
+}
+
+.s-name-img-container{
+    display: flex;
+    align-items: center;
+}
+
+.song-img{
+    background-image: url(Media/new-rl.jpeg);
+    background-size: cover;
+    height: 5rem;
+    width: 5rem;
+    margin-right: 1rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.s-name{
+    color: white;
+    font-size: 1rem;
+    margin-bottom: 15%;
+}
+
+.s-date{
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 100;
+    margin-top: 15%;
+}
+
+.play-icon{
+    color: white;
+    font-size: 1.2rem;
+    display: none;
+}
+
+.song-img:hover .play-icon{
+    display: block;
+}
+
+.song-options{
+    display: flex;
+    flex-direction: column;
+    height: 60%;
+    color: white;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.option-icon{
+    font-size: 1.2rem;
+    position: relative;
+}
+
+.s-option-dropdown{
+    list-style: none;
+    position: absolute;
+    background: white;
+    padding: 1rem;
+    z-index: 999;
+    display: none;
+    width: 14rem;
+}
+
+.s-option-dropdown li{
+    color: grey;
+    margin: 0.3rem;
+}
+
+.s-option-dropdown li i{
+    margin-right: 0.5rem;
+}
+
+.option-icon:hover .s-option-dropdown{
+    display: block;
+}
+
+
+/* popular artists section */
+
+.artists-section{
+    margin-top: 3rem;
+}
+
+.artist-container{
+    /* border: 2px soild red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.artist-img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid red; */
+    position: relative;
+}
+
+.artist-img img{
+    width: 8rem;
+    height: 8rem;
+    /* border: 2px solid red; */
+    border-radius: 100%;
+}
+
+.play-artist{
+    position: absolute;
+    font-size: 1.6rem;
+}
+
+.inr-a-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.artist-name{
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: white;
+}
+
+.artist-img i {
+    display: none;
+}
+
+.artist-img:hover  i.play-artist{
+    display: block;
+}
+
+/* stations section */
+
+.stations-container{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    background-color: #12183f;
+    /* border: 1px solid red; */
+}
+
+.station-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.station-name{
+    position: absolute;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.station-img{
+   display: block;
+}
+
+
+.station-img img{
+    height: 7rem;
+}
+
+.stations-inner-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    /* border: 1px solid red; */
+    flex-wrap: wrap;
+}
+
+.station-item img{
+    margin: 0.5rem;
+    height: 8rem;
+    width: 8rem;
+    border-radius: 100%;
+}
+
+/* mood section */
+
+.mood-section-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    /* border: 2px solid red; */
+    margin-bottom: 3rem;
+}
+
+.mood-img-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 1rem;
+}
+
+.mood-item{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.mood-img-container img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10rem;
+    width: 20rem;
+    scale: 1;
+    transition: all 0.5s ease ;
+}
+
+.mood-img-container img:hover {
+    scale: 1.3;
+}
+
+.mood-name{
+    color: white;
+    font-size: 1.5rem;
+    z-index: 5;
+    position: absolute;
+}
+
+/* latest sections */
+
+.latest-hindi-container{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    /* border: 2px solid red; */
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.latest-item{
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+}
+
+.hindi-img img{
+    height: 10rem;
+    width: 10rem;
+}
+
+.s-name-o{
+    font-size: 1rem;
+    color: white;
+}
+
+.s-date-o{
+    font-size: 0.8rem;
+    color: white;
+}
+
+.latest-item div{
+    margin-bottom: 1rem;
+}
+
+
+/* right queue section */
+
+.aside-right{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 2rem;
+    width: 35vw;
+    /* border: 2px solid red; */
+    height: 90vh;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+/* queue */
+/* queue options */
+.queue-container{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.queue-top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    width: 34vw;
+    /* border: 1px solid red; */
+}
+
+.q-options{
+    display: flex;
+    color: aquamarine;
+    font-size: 0.8rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.q-options p {
+    margin-right: 1rem;
+}
+
+/* queue items */
+
+.q-item-container{
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 34vw;
+    height: 5rem;
+    /* border: 1px solid red; */
+    background-color: #12183f;
+    padding: 1rem 1rem;
+
+}
+
+.song-container{
+    display: flex;
+    align-items: center;
+}
+
+.image-container{
+    display: flex;
+    align-items: center;
+    /* border: 1px solid red; */
+    justify-content: center;
+    position: relative;
+}
+
+.image-container img{
+    height: 3.5rem;
+    width: 3.5rem;
+    margin: 0.8rem 0.8rem;
+    border-radius: 0.6rem;
+}
+
+.q-serial{
+    font-size: 0.9rem;
+    color: white;
+}
+
+.q-s-name-container{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* border: 1px solid red; */
+}
+
+.q-singer-name{
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+}
+
+.heart-icon{
+    color: white;
+    scale: 1;
+    transition: all 0.5s ease;
+}
+
+.heart-icon:hover{
+    scale: 1.3;
+    color: aquamarine;
+}
+
+.q-serial i {
+    rotate: 90deg;
+}
+
+.play-icon-queue{
+    color: white;
+    position: absolute;
+}
+
+.play-icon-queue {
+    display: none;
+}
+
+.image-container:hover .play-icon-queue{
+    display: block;
+}
+
+/* player */
+
+.player-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #3b3b3b;
+    height: 5rem;
+    width: 100%;
+    z-index: 1000;
+    position: fixed;
+    bottom: 0;
+    padding: 1rem 1rem;
+}
+
+.song-section{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 12%;
+    /* border: 1px solid red; */
+}
+
+
+.song-section img{
+    height: 3rem;
+    width: 3rem;
+}
+
+.p-song-name{
+    font-size: 1rem;
+    color: white;
+    margin-bottom: 0.3rem;
+}
+
+.p-singer-name{
+    font-size: 0.8rem;
+    color: white;
+    margin-top: 0.3rem;
+}
+.p-s-icons{
+    color: white;
+}
+
+/* ------------------- */
+
+.player{
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 30%;
+}
+
+.player-slider{
+    margin-top: 10px;
+    width: 100%;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+}
+
+.player-options{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    /* border: 1px solid red; */
+    width: 70%;
+    
+}
+.slider{
+    width: 100%;
+}
+
+.player-options :nth-child(3){
+    scale: 1.5;
+}
+
+.p-s-time{
+    color: white;
+    font-size: 0.9rem;
+}
+
+.p-vol-controls{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* border: 1px solid red; */
+    color: white;
+    width: 15%;
+}
+
+.vol{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.vol i{
+    margin-right: 0.5rem;
+}
+
+.p-s-icons i{
+    margin-left: 1rem;
+}
+
+
+/* ------------------------------------------------ */
+/* playlist page */
+.artist-profile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 50vh;
+    /* border: 1px solid red; */
+}
+
+.arijit-img img{
+    height: 50vh;
+    width: 25vw;
+}
+
+.a-details{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    /* border: 1px solid red; */
+    width: 60%;
+    margin: 1rem;
+}
+
+.a-name-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.play-button{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 40%;
+}
+
+
+/* styling */
+
+.arijit-name{
+    color: white;
+}
+
+.flw, .title, .about-artist, .follow, .tracks{
+    color: beige;
+}
+
+.title{
+    margin-bottom: 2rem;
+}
+
+.about-artist{
+    margin-bottom: 2rem;
+}
+
+.play-button{
+    margin-bottom: 2rem;
+}
+
+
+.p-button {
+    background-image: linear-gradient(rgb(102, 23, 115), rgb(226, 102, 226));
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .p-button:hover{
+    scale: 1.1;
+  }
+
+  .follow:hover{
+    color: aquamarine;
+  }
+
+  /* main tracks section---------------------- */
+
+  .main-tracks-section{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* border: 1px solid red; */
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* media queries for responsiveness */
+
+
+@media only screen and (max-width: 768px){
+
+
+    .search-box{
+        display: none;
+        }
+    
+        #search-icon{
+            display: block;
+            margin-right: 2rem;
+        }
+    
+        .fav{
+            margin-left: 1rem;
+        }
+
+    .container {
+        padding-left: 0.8rem;
+        padding-right: 0.8rem;
+        flex-direction: column  ;
+        }
+
+    .aside-left {
+        margin-left: 0.8rem;
+        width: 100%;
+    }
+
+    .top-posters img{
+        width: 16rem;
+    }
+
+    .aside-right{
+        width: 100%;
+    }
+
+    .queue-container{
+        width: 100%;
+    }
+
+    .q-item-container{
+        width: 100%;
+    }
+}
+
+
